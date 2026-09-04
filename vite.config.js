@@ -8,15 +8,15 @@ export default defineConfig({
     port: 5173,
     proxy: {
       "/api": {
-        target: "http://localhost:3001",
+        target: "https://vmc-operator-hmi-u45x.onrender.com",
         changeOrigin: true,
       },
       "/stage": {
-        target: "http://localhost:3001",
+        target: "https://vmc-operator-hmi-u45x.onrender.com",
         changeOrigin: true,
       },
       "/operation": {
-        target: "http://localhost:3001",
+        target: "https://vmc-operator-hmi-u45x.onrender.com",
         changeOrigin: true,
       },
     },
