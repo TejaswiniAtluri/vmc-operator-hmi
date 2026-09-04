@@ -19,7 +19,8 @@ export default defineConfig({
         target: "https://vmc-operator-hmi-u45x.onrender.com",
         changeOrigin: true,
       },
-    },
+      allowedHosts: ["https://vmc-operator-hmi-u45x.onrender.com"],
+      
   },
   preview: {
     host: "0.0.0.0",
