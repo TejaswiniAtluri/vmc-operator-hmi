@@ -758,6 +758,14 @@ button {
   gap: 12px;
 }
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  flex: 1 1 300px; /* grows/shrinks, min width 300px */
+}
+
 @media (max-width: 1180px) {
   .industrial-shell {
     grid-template-columns: 1fr;
@@ -812,5 +820,14 @@ button {
 
   .summary-chip {
     flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; 
+  }
+  .dashboard {
+    flex-direction: column; 
   }
 }
