@@ -26,7 +26,11 @@ seedDatabase();
 const app = express();
 const PORT = process.env.PORT || 3001;
 const cors = require("cors");
-app.use(cors());
+app.use(cors({
+  origin: "https://vmc-operator-hmi-p7t6.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+}));
 app.use(express.json());
 
 const handleStageNext = (_req, res) => {
