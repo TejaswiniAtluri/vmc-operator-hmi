@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
+const API_BASE = "https://vmc-operator-hmi-u45x.onrender.com";
+
 const SIDEBAR_ITEMS = [
   'Dashboard',
   'Jobs/Programs',
@@ -20,8 +22,8 @@ const STAGES = [
   { key: 'operation', label: 'Operation' },
 ];
 
-const apiRequest = async (url, options = {}) => {
-  const response = await fetch(url, {
+const apiRequest = async (path, options = {}) => {
+  const response = await fetch('${API_BASE}${path}', {
     headers: {
       'Content-Type': 'application/json',
       ...(options.headers || {}),
