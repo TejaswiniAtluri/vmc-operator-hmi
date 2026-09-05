@@ -1,7 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 
-const API_BASE = "https://vmc-operator-hmi-u45x.onrender.com";
-
 const SIDEBAR_ITEMS = [
   'Dashboard',
   'Jobs/Programs',
@@ -23,9 +21,11 @@ const STAGES = [
 ];
 
 const apiRequest = async (path, options = {}) => {
-  const response = await fetch('${API_BASE}${path}', {
+  const API_BASE = "https://vmc-operator-hmi-u45x.onrender.com";
+
+  const response = await fetch(`${API_BASE}${path}`, {
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       ...(options.headers || {}),
     },
     ...options,
